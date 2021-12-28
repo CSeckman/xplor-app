@@ -24,6 +24,7 @@ const Landing = ({ user }) => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
+      console.log(formData.query)
       searchUnsplash(formData.query)
         .then(results => {
           setResults(results.results)
@@ -82,14 +83,14 @@ const Landing = ({ user }) => {
               <img src='#' alt="" />
               <span>PLAN YOUR NEXT VACATION</span>
               <div className="suggestion">
-                <div className="arrival">Departure <br />
+                {/* <div className="arrival">Departure <br />
                   <input type="date" />
                 </div>
                 <div className="departure">Arrival <br />
                   <input type="date" />
-                </div>
+                </div> */}
                 <div className="destination">
-                  Destination<br />
+                  <h4>X'plor some cities before you start planning!</h4>
                   <form
                     autoComplete="off"
                     onSubmit={handleSubmit}
@@ -102,7 +103,7 @@ const Landing = ({ user }) => {
                     />
                     <button
                       disabled={isFormInvalid()}
-                    >View Destination
+                    >X'plor!
                     </button>
                   </form>
                 </div>
@@ -111,9 +112,7 @@ const Landing = ({ user }) => {
           </div>
         </div>
         <div className="splash-suggestion">
-          <div className="h3-container">
-            <h3>X'perience Top Destinations</h3>
-          </div>
+
           <div className="choice-container">
             {results.length ?
               <>
@@ -124,7 +123,7 @@ const Landing = ({ user }) => {
                 </div>
               </>
               :
-              <h4>No results</h4>
+              ''
             }
           </div>
         </div>
@@ -149,12 +148,12 @@ const Landing = ({ user }) => {
             </form>
           </div>
           <div className="evt-card-container">
-            <div className="destination-img">
+            <div className="destination-img parent">
               {atrResults.length ?
                 <>
                   {atrResults.map((attraction, idx) =>
-                    <div className="atr-box">
-                      <img key={attraction._id} src={attraction.image_url} className="event" alt="..." />
+                    <div className="atr-box child card">
+                      <img key={attraction._id} src={attraction.image_url} className="event-img" alt="..." />
                       {attraction.name &&
                         <h5 className="atr-txt">
                           {attraction.name}
@@ -189,12 +188,12 @@ const Landing = ({ user }) => {
               </button>
             </form>
           </div>
-          <div className="destination-img">
+          <div className="destination-img parent">
             {restResults.length ?
               <>
                 {restResults.map((restaurant, idx) =>
-                  <div className="atr-box">
-                    <img key={restaurant._id} src={restaurant.image_url} className="event" alt="..." />
+                  <div className="atr-box card child">
+                    <img key={restaurant._id} src={restaurant.image_url} className="event-img" alt="..." />
                     {restaurant.name &&
                       <h5 className="atr-txt">
                         {restaurant.name}
