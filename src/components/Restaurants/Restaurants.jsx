@@ -83,7 +83,7 @@ const Restaurants = (props) => {
                       }
                       <p className='deets'>Rating:  {restaurant.rating}/5</p>
                       <p className='deets'>Price:  {restaurant.price}</p>
-                      <p className='deets'>Contact:  {restaurant.phone}</p>
+                      <p className='deets'>Contact:  {restaurant.phone.split('').splice(2,11).join('')}</p>
                       <button className="btn btn-add" onClick={() => handleAddSubmit(restaurant)}>Add to Trip</button>
                     </div>
                   )}
