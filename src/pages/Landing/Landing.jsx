@@ -80,7 +80,7 @@ const Landing = ({ user }) => {
           <div className="top-2">
             <div className="splash-landing">
               <img src='#' alt="" />
-              <span>PLAN YOUR NEXT VACATION</span>
+              <h1 className='plan-title'>PLAN YOUR NEXT VACATION</h1>
               <div className="suggestion">
                 {/* <div className="arrival">Departure <br />
                   <input type="date" />

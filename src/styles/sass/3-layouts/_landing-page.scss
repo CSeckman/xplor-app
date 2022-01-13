@@ -31,35 +31,44 @@
   color: white;
   display: inline-block;
 }
-// .plan{
-//   font-size: 50px;
-//   align-self: flex-start;
-//   display: inline-block;
-// }
-.splash-landing{
-  align-self: flex-end;
-  width: 100%;
-  height: 700px;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-    span{
-      margin-top: -80%;
-      font-size: 3.5em;
-      z-index: 1;
 
+// .plan{
+  //   font-size: 50px;
+  //   align-self: flex-start;
+  //   display: inline-block;
+  // }
+  .splash-landing{
+    align-self: flex-end;
+    width: 100%;
+    height: 700px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    .plan-title{
+      margin-top: 15px;
+      font-size: 3.5em;
+      
     } 
     img{
       height: 100%;
       width: 100%;
       position: relative;
     }
-}
+  }
+  
+  @media (max-width:400px) {
+    .logo{
+      font: 8em $head;
+    }
+    .splash-landing .plan-title{
+      font-size: 30px;
+    }
+  }
 
-.splash-landing img::before{
-  content: '';
+  .splash-landing img::before{
+    content: '';
   position: absolute;
   width: inherit;
   opacity: 0.9;
