@@ -24,7 +24,7 @@ const NavBar = ({ user, handleLogout }) => {
 					</div>
 				</nav>
 			) : (
-				<nav className="navbar navbar-expand navbar-light bg-light">
+				<nav className="navbar navbar-expand ">
 					<div className="container-fluid access">
 						<Link className="navbar-brand" to='/'>X'plor</Link>
 						<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
