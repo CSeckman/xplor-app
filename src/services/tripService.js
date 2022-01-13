@@ -31,7 +31,6 @@ function addPackingItem(newItemData) {
 }
 
 function deletePackingItem(itemId, tripId) {
-    console.log('services', itemId, tripId)
     return fetch(`${BASE_URL}/${tripId}/packList/${itemId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
@@ -51,7 +50,6 @@ function addHotel(newHotelData) {
 }
 
 function deleteHotel(hotelId, tripId) {
-    console.log('services', hotelId, tripId)
     return fetch(`${BASE_URL}/${tripId}/hotels/${hotelId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
@@ -70,8 +68,7 @@ function addFlight(newFlightData) {
         .then(res => res.json())
 }
 
-function deleteFlight(flightId, tripId) {
-    console.log('services', flightId, tripId)
+function deleteFlight(flightId, tripId) { 
     return fetch(`${BASE_URL}/${tripId}/flights/${flightId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }

@@ -20,8 +20,6 @@ const Profile = (props) => {
       })
   }, [props.trips])
 
-
-  console.log("my trips", myTrips)
   return (
     <main className="main-area">
       <h1 className="profile-text">

@@ -12,13 +12,11 @@ function index(req, res) {
 
 
 function create(req, res) {
-  console.log("ctrl", req.body)
   req.body.tripHolder = req.user.profile
   Trip.create(req.body)
     .then(trip => {
       axios.get(`https://api.unsplash.com/search/photos/?query=${trip.city} skyline&client_id=${process.env.UN_API}`)
         .then(response => {
-          console.log('random city image', response.data.results[0].urls.full)
           trip.url = response.data.results[0].urls.full
           trip.save()
           .then(tripAndImage => res.json(tripAndImage))
@@ -38,10 +36,9 @@ function addPackingItem(req, res) {
 }
 
 function deletePackingItem(req, res) {
-  console.log("ctrl", req.params.tripId, req.params.itemId)
   Trip.findById(req.params.tripId)
     .then(trip => {
-      const packItems = trip.packList
+      let packItems = trip.packList
       packItems.remove({ _id: req.params.itemId })
       trip.save()
         .then(tripWithOutItem => {
@@ -62,10 +59,9 @@ function addHotel(req, res) {
 }
 
 function deleteHotel(req, res) {
-  console.log("ctrl", req.params.tripId, req.params.hotelId)
   Trip.findById(req.params.tripId)
     .then(trip => {
-      const hotels = trip.hotel
+      let hotels = trip.hotel
       hotels.remove({ _id: req.params.hotelId })
       trip.save()
         .then(tripWithOutHotel => {
@@ -86,10 +82,9 @@ function addFlight(req, res) {
 }
 
 function deleteFlight(req, res) {
-  console.log("ctrl", req.params.tripId, req.params.flightId)
   Trip.findById(req.params.tripId)
     .then(trip => {
-      const allFlights = trip.flights
+      let allFlights = trip.flights
       allFlights.remove({ _id: req.params.flightId })
       trip.save()
         .then(tripWithOutFlight => {
@@ -110,11 +105,8 @@ function deleteRestaurant(req, res) {
   .populate('restaurants')
   .populate('attractions')
     .then(trip => {
-      console.log(req.params.restaurantId)
-      console.log("trip before", trip)
       trip.restaurants.remove({_id: req.params.restaurantId})
       trip.save()
-      console.log("trip after", trip)
       res.json(trip)
     })
 }
@@ -124,11 +116,8 @@ function deleteAttraction(req, res) {
   .populate('restaurants')
   .populate('attractions')
     .then(trip => {
-      console.log(req.params.attractionId)
-      console.log("trip before", trip)
       trip.attractions.remove({_id: req.params.attractionId})
       trip.save()
-      console.log("trip after", trip)
       res.json(trip)
     })
 }

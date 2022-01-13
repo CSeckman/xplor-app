@@ -4,7 +4,6 @@ import axios from 'axios'
 
 
 function searchRestaurants(req, res) {
-  console.log(req.params.query)
   axios.get(`https://api.yelp.com/v3/businesses/search?location=${req.params.query}&term=restaurants&limit=10`, {
     headers: {
       'Authorization': `Bearer ${process.env.API_KEY}`, 'Content-Type': 'application/json'
@@ -24,13 +23,11 @@ function addRestaurant(req, res) {
   .then(rest => {
     Trip.findById(req.params.id)
       .then(trip => {
-        console.log("trip", trip)
         trip.restaurants.push(rest)
         trip.save() 
           .then(updatedTrip => {
             updatedTrip.populate('restaurants')
             .then(tripRestaurant => {
-              console.log('pop', tripRestaurant)
               res.json(tripRestaurant)
             })
           })

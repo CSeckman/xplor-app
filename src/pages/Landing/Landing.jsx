@@ -24,7 +24,6 @@ const Landing = ({ user }) => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      console.log(formData.query)
       searchUnsplash(formData.query)
         .then(results => {
           setResults(results.results)

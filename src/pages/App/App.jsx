@@ -40,7 +40,7 @@ const App = () => {
 	const handleAddPackingItem = newItemData => {
 		addPackingItem(newItemData)
 			.then(updatedTripData => {
-				const updatedTrips = trips.map(trip => trip.App_id === updatedTripData._id ? updatedTripData : trip)
+				let updatedTrips = trips.map(trip => trip.App_id === updatedTripData._id ? updatedTripData : trip)
 				setTrips(updatedTrips)
 				navigate('/tripDetails', { state: updatedTripData })
 			})
@@ -49,7 +49,7 @@ const App = () => {
 	const handleDeletePackingItem = (itemId, tripId) => {
 		deletePackingItem(itemId, tripId)
 			.then(updatedTrip => {
-				const newTripState = trips.map(trip => trip._id === updatedTrip._id ? updatedTrip : trip)
+				let newTripState = trips.map(trip => trip._id === updatedTrip._id ? updatedTrip : trip)
 				setTrips(newTripState)
 				navigate('/tripDetails', { state: updatedTrip })
 			})
@@ -58,7 +58,7 @@ const App = () => {
 	const handleAddHotel = newHotelData => {
 		addHotel(newHotelData)
 			.then(updatedTripData => {
-				const updatedTrips = trips.map(trip => trip.App_id === updatedTripData._id ? updatedTripData : trip)
+				let updatedTrips = trips.map(trip => trip.App_id === updatedTripData._id ? updatedTripData : trip)
 				setTrips(updatedTrips)
 				navigate('/tripDetails', { state: updatedTripData })
 			})
@@ -67,7 +67,7 @@ const App = () => {
 	const handleDeleteHotel = (hotelId, tripId) => {
 		deleteHotel(hotelId, tripId)
 			.then(updatedTrip => {
-				const newTripState = trips.map(trip => trip._id === updatedTrip._id ? updatedTrip : trip)
+				let newTripState = trips.map(trip => trip._id === updatedTrip._id ? updatedTrip : trip)
 				setTrips(newTripState)
 				navigate('/tripDetails', { state: updatedTrip })
 			})
@@ -76,7 +76,7 @@ const App = () => {
 	const handleAddFlight = newFlightData => {
 		addFlight(newFlightData)
 			.then(updatedTripData => {
-				const updatedTrips = trips.map(trip => trip.App_id === updatedTripData._id ? updatedTripData : trip)
+				let updatedTrips = trips.map(trip => trip.App_id === updatedTripData._id ? updatedTripData : trip)
 				setTrips(updatedTrips)
 				navigate('/tripDetails', { state: updatedTripData })
 			})
@@ -85,8 +85,7 @@ const App = () => {
 	const handleDeleteFlight = (flightId, tripId) => {
 		deleteFlight(flightId, tripId)
 			.then(updatedTrip => {
-				console.log("app.jsx front end flight", updatedTrip)
-				const newTripState = trips.map(trip => trip._id === updatedTrip._id ? updatedTrip : trip)
+				let newTripState = trips.map(trip => trip._id === updatedTrip._id ? updatedTrip : trip)
 				setTrips(newTripState)
 				navigate('/tripDetails', { state: updatedTrip })
 			})
@@ -103,7 +102,7 @@ const App = () => {
 	const handleAddRestaurant = (restaurant, trip) => {
 		addRestaurant(restaurant, trip)
 			.then(updatedTrip => {
-				const updatedTrips = trips.map(trip => trip.App_id === updatedTrip._id ? updatedTrip : trip)
+				let updatedTrips = trips.map(trip => trip.App_id === updatedTrip._id ? updatedTrip : trip)
 				setTrips(updatedTrips)
 				navigate('/tripDetails', { state: updatedTrip })
 			})
@@ -113,7 +112,7 @@ const App = () => {
 	const handleAddAttraction = (attraction, trip) => {
 	addAttraction(attraction, trip)
 		.then(updatedTrip => {
-			const updatedTrips = trips.map(trip => trip.App_id === updatedTrip._id ? updatedTrip : trip)
+			let updatedTrips = trips.map(trip => trip.App_id === updatedTrip._id ? updatedTrip : trip)
 			setTrips(updatedTrips)
 			navigate('/tripDetails', { state: updatedTrip })
 		})
@@ -122,7 +121,7 @@ const App = () => {
 	const handleDeleteAttraction = (attractionId, tripId) => {
 		deleteAttraction(attractionId, tripId)
 			.then(updatedTrip => {
-				const newTripState = trips.map(trip => trip._id === updatedTrip._id ? updatedTrip : trip)
+				let newTripState = trips.map(trip => trip._id === updatedTrip._id ? updatedTrip : trip)
 				setTrips(newTripState)
 				navigate('/tripDetails', { state: updatedTrip })
 			})
@@ -131,7 +130,7 @@ const App = () => {
 	const handleDeleteRestaurant = (restaurantId, tripId) => {
 		deleteRestaurant(restaurantId, tripId)
 			.then(updatedTrip => {
-				const newTripState = trips.map(trip => trip._id === updatedTrip._id ? updatedTrip : trip)
+				let newTripState = trips.map(trip => trip._id === updatedTrip._id ? updatedTrip : trip)
 				setTrips(newTripState)
 				navigate('/tripDetails', { state: updatedTrip })
 			})
