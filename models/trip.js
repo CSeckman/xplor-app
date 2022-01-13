@@ -42,7 +42,7 @@ const tripSchema = new mongoose.Schema({
     flights: [flightSchema],
     hotel: [hotelSchema],
     tripHolder: { type: mongoose.Schema.Types.ObjectId, ref: "Profile" },
-    url:{},
+    url:'',
 }, {
     timestamps: true,
 })

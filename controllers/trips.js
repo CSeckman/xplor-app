@@ -1,4 +1,5 @@
 import { Trip } from '../models/trip.js'
+import axios from 'axios'
 
 function index(req, res) {
   Trip.find({})
@@ -9,12 +10,19 @@ function index(req, res) {
     })
 }
 
+
 function create(req, res) {
   console.log("ctrl", req.body)
   req.body.tripHolder = req.user.profile
   Trip.create(req.body)
     .then(trip => {
-      res.json(trip)
+      axios.get(`https://api.unsplash.com/search/photos/?query=${trip.city} skyline&client_id=${process.env.UN_API}`)
+        .then(response => {
+          console.log('random city image', response.data.results[0].urls.full)
+          trip.url = response.data.results[0].urls.full
+          trip.save()
+          .then(tripAndImage => res.json(tripAndImage))
+        })
     })
 }
 

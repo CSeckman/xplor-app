@@ -20,31 +20,6 @@ const Profile = (props) => {
       })
   }, [props.trips])
 
-  const handleChange = e => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-  const handleSubmit = async e => {
-    e.preventDefault()
-    try {
-      searchUnsplash(formData.query)
-        .then(results => {
-          setResults(results.results)
-        })
-        .catch(() => {
-          console.log("something went wrong!");
-        })
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-  const { query } = formData
-  const isFormInvalid = () => {
-    return !(query)
-  }
 
   console.log("my trips", myTrips)
   return (
@@ -55,9 +30,12 @@ const Profile = (props) => {
       <Link className="btn btn-light" to='/addTrip' >Add trip</Link>
       <div className="parent-div">
         {myTrips.map(trip =>
-          <div key={trip._id} className="card child-div col-sm-3" >
+          <div key={trip._id} className="card child-div" >
             <div className="card-header">
               <h3>{trip.city}</h3>
+            </div>
+            <div className="prof-trip-img-div">
+              <img className="prof-trip-img" src={trip.url} alt="{trip.city}" />
             </div>
             <div className="card-body trip-bottom-card">
               <Link className="btn btn-light" to='/tripDetails' state={trip}>Trip Details</Link>
@@ -66,38 +44,6 @@ const Profile = (props) => {
           </div>
           )}
       </div>
-      <div>
-        <h3>Search a Destination</h3>
-          <form
-            autoComplete="off"
-            onSubmit={handleSubmit}
-          >
-            <input
-              type="text"
-              value={query}
-              name="query"
-              onChange={handleChange}
-            />
-            <button
-              disabled={isFormInvalid()}
-            >View your destination
-            </button>
-          </form>
-          {results.length ?
-            <>
-              <h1>Destination</h1>
-              <div className="restaurant-card destination" >
-                <div className="destination-img" >
-                {results.map((photos, idx) =>
-                    <img id=""  key={photos._id} src={photos.urls.regular} className="city-img" alt="..." />
-                    )}
-                    </div>
-              </div>
-            </>
-            :
-            <h4>No results</h4>
-          }
-        </div>
     </main>
   )
 }
