@@ -138,3 +138,18 @@ input[type=checkbox]:checked + label.strike-item{
 .footer {
   height: 50px;
 }
+
+.title-text-div {
+  background-color: #80cbd3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 0px 50px 0px;
+}
+
+.title-text {
+  padding: 10px;
+  text-align: center;
+  color: #121925;
+  font-size: 55px;
+}

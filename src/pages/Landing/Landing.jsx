@@ -105,6 +105,11 @@ const Landing = ({ user }) => {
                     >X'plor!
                     </button>
                   </form>
+                  <div className="h3-container">
+                    <Link to="/addtrip">
+                      <button className="plan-btn">I know where I want to go, let's plan!</button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -211,7 +216,7 @@ const Landing = ({ user }) => {
         <div className="final-plan">
           <div className="h3-container">
             <Link to="/addtrip">
-            <h1>Final Plan</h1>
+            <h1>Start Planning HERE!</h1>
               </Link>
           </div>
         </div>

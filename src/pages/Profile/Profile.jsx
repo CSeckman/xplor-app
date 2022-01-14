@@ -22,9 +22,11 @@ const Profile = (props) => {
 
   return (
     <main className="main-area">
-      <h1 className="profile-text">
-        {props.user.name}'s Trips
-      </h1>
+      <div className="title-text-div">
+        <h1 className="title-text">
+          {props.user.name}'s Trips
+        </h1>
+      </div>
       <Link className="btn btn-light" to='/addTrip' >Add trip</Link>
       <div className="parent-div">
         {myTrips.map(trip =>

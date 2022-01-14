@@ -6,23 +6,7 @@
   justify-content: center;
   text-align: center;
 }
-// .flex-top{
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-// }
-// .top-1{
-//   width: 30%;
-//   z-index: 100;
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   margin-bottom: 5px solid black;
-// }
-// .top-2{
-//   width: 70%;
-//   margin-top: -70px;
-// }
+
 .logo{
   top: 0;
   margin: 0%;
@@ -32,43 +16,44 @@
   display: inline-block;
 }
 
-// .plan{
-  //   font-size: 50px;
-  //   align-self: flex-start;
-  //   display: inline-block;
-  // }
-  .splash-landing{
-    align-self: flex-end;
-    width: 100%;
-    height: 700px;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    .plan-title{
-      margin-top: 15px;
-      font-size: 3.5em;
-      
-    } 
-    img{
-      height: 100%;
-      width: 100%;
-      position: relative;
-    }
-  }
-  
-  @media (max-width:400px) {
-    .logo{
-      font: 8em $head;
-    }
-    .splash-landing .plan-title{
-      font-size: 30px;
-    }
-  }
+.plan-btn {
+  margin: 10px;
+  border-radius: 5px;
+  padding: 5px;
+}
 
-  .splash-landing img::before{
-    content: '';
+.splash-landing{
+  align-self: flex-end;
+  width: 100%;
+  height: 700px;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  .plan-title{
+    margin-top: 15px;
+    font-size: 3.5em;
+    
+  } 
+  img{
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+}
+  
+@media (max-width:400px) {
+  .logo{
+    font: 8em $head;
+  }
+  .splash-landing .plan-title{
+    font-size: 30px;
+  }
+}
+
+.splash-landing img::before{
+  content: '';
   position: absolute;
   width: inherit;
   opacity: 0.9;
@@ -83,7 +68,7 @@
 }
 
 .suggestion{
-  height: 100px;
+
   width: 100%;
   background-color: #c6871e;
   margin-bottom: -50px;
@@ -104,88 +89,38 @@
   flex-direction: column;
 }
 
-// .h3-container{
-//   margin-bottom: 1.5em;
-// }
 .destination-img{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .city-img{
   object-fit: cover;
   height: 350px;
   width: 350px;
   padding: 5px;
 }
-// .state{
-//   height: 300px;
-//   width: 300px;
-//   background: skyblue;
-//   text-align: center;
-//   margin-right: 50px;
-// }
-// .splash-choice{
-//   height: 300px;
-//   width: 150px;
-//   background: $banana;
-//   padding: 10px;
-// }
+
 .choice-container{
   display: flex;
   justify-content: space-around;
 }
-// .attractions{
-//   display: flex;
-//   flex-direction: row;
-//   margin-top: 5em;
-// }
+
 .event-container{
   width: 60%;
   display: flex;
   flex-wrap: wrap;
   margin-top: 40px;
 }
-// .form-mrg{
-//   margin-top: 2em;
-// }
 
-// .event-details{
-//   height: 457px;
-//   width: 37%;
-//   background: $banana;
-//   margin-right: 125px;
-// }
-// .attractions{
-//   width: 100%;
-//   @include bx-container;
-// }
-// .evt-card-container{
-//   display: flex;
-//   justify-content: flex-start;
-// }
-// .atr-txt{
-//   color: white;
-// }
 .event-img{
   object-fit: cover;
   width: 98%;
   height: 300px;
 }
-// .evt-details-img{
-//   height: 35%;
-//   background: skyblue;
-// }
-// .cuisine-container {
-//   @include bx-container
-// }
-// .category{
-//   height: 300px;
-//   width: 300px;
-//   background: skyblue;
-//   margin: 2.5em 2.5em 2.5em 0;
-// }
+
 .food-card-container{
   display: flex;
   justify-content: space-around;
@@ -206,41 +141,3 @@
   height: 350px;
   min-width: 300px;
 }
-
-// .food-choice{
-//   width: 60%;
-//   display: flex;
-//   flex-wrap: wrap;
-// }
-// .food-details{
-//   height: 400px;
-//   width: 40%;
-//   background: $banana;
-// }
-
-// .food{
-//   height: 200px;
-//   width: 200px;
-//   background: $banana;
-//   margin:0  10px 10px 0;
-// }
-// .food-details-img{
-//   height: 40%;
-//   background: skyblue;
-// }
-// .final-plan{
-//   @include bx-container;
-//     h1{
-//       text-align: center;
-//       font-size: 5em;
-//       margin: 0;
-//     }
-// }
-
-// .hero-wrapper{
-//   width: 100%;
-//   position: relative;
-// }
-// .hero-wrapper span{
-//   font-size: 2em;
-// }
