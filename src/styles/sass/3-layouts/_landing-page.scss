@@ -98,9 +98,9 @@
 
 .city-img{
   object-fit: cover;
-  height: 350px;
-  width: 350px;
-  padding: 5px;
+  height: 300px;
+  width: 300px;
+  padding: 10px;
 }
 
 .choice-container{
@@ -115,10 +115,15 @@
   margin-top: 40px;
 }
 
-.event-img{
+.event-img-div{
+  width: 300px;
+  height: 270px;
   object-fit: cover;
-  width: 98%;
-  height: 300px;
+  overflow: hidden;
+  border-radius: 1%;
+}
+.event-img{
+  width: 370px;
 }
 
 .food-card-container{
@@ -131,13 +136,39 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .child {
   align-items: baseline;
-  margin: 5px;
+  margin: 10px;
   width: 300px;
-  height: 350px;
+  height: 325px;
   min-width: 300px;
+  background-color: white;
+}
+
+
+.titles {
+  color: white;
+  
+}
+
+.atr-text {
+  display: flex;
+  justify-content: center;
+}
+
+h5 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.final-plan {
+  margin-bottom: 40px;
+  h1{
+    color:#c6871e;
+
+  }
 }

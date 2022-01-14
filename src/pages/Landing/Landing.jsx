@@ -117,7 +117,7 @@ const Landing = ({ user }) => {
         </div>
         <div className="splash-suggestion">
 
-          <div className="choice-container">
+          <div className="choice-container parent">
             {results.length ?
               <>
                 <div className="destination-img">
@@ -131,9 +131,9 @@ const Landing = ({ user }) => {
             }
           </div>
         </div>
-        <div className="attractions">
+        <div className="attractions parent">
           <div className="h3-container">
-            <h3>X'citing Attractions</h3>
+            <h3 className="titles">X'citing Attractions</h3>
             <form
               autoComplete="off"
               onSubmit={handleSubmitAttraction}
@@ -147,7 +147,7 @@ const Landing = ({ user }) => {
               />
               <button
                 disabled={isFormInvalid()}
-              >Get Attraction
+              >X'Plor Attractions
               </button>
             </form>
           </div>
@@ -156,25 +156,29 @@ const Landing = ({ user }) => {
               {atrResults.length ?
                 <>
                   {atrResults.map((attraction, idx) =>
-                    <div className="atr-box child card">
-                      <img key={attraction._id} src={attraction.image_url} className="event-img" alt="..." />
+                    <div className="atr-box child">
+                      <div className="event-img-div">
+                        <img key={attraction._id} src={attraction.image_url} className="event-img" alt="..." />
+                      </div>
                       {attraction.name &&
-                        <h5 className="atr-txt">
+                        <div className="atr-txt">
+                          <h5>
                           {attraction.name}
-                        </h5>
+                          </h5>
+                        </div>
                       }
                     </div>
                   )}
                 </>
                 :
-                <h4>Search for a city to get results</h4>
+                <h1></h1>
               }
             </div>
           </div>
         </div>
         <div className="cuisine-container">
           <div className="h3-container">
-            <h3>X'cuisite Cuisine</h3>
+            <h3 className="titles">X'cuisite Cuisine</h3>
             <form
               autoComplete="off"
               onSubmit={handleSubmitRestaurant}
@@ -188,7 +192,7 @@ const Landing = ({ user }) => {
               />
               <button
                 disabled={isFormInvalid()}
-              >Get Attraction
+              >X'Plor Restaurants
               </button>
             </form>
           </div>
@@ -196,28 +200,31 @@ const Landing = ({ user }) => {
             {restResults.length ?
               <>
                 {restResults.map((restaurant, idx) =>
-                  <div className="atr-box card child">
-                    <img key={restaurant._id} src={restaurant.image_url} className="event-img" alt="..." />
+                  <div className="atr-box child">
+                    <div className="event-img-div">
+                      <img key={restaurant._id} src={restaurant.image_url} className="event-img" alt="..." />
+                    </div>
                     {restaurant.name &&
-                      <h5 className="atr-txt">
+                      <div className="atr-txt">
+                        <h5>
                         {restaurant.name}
-                      </h5>
+                        </h5>
+                      </div>
                     }
-                    <p>Rating: {restaurant.rating}/5</p>
-                    <p>Price: {restaurant.price}</p>
+                    
                   </div>
                 )}
               </>
               :
-              <h4>Search for a city to get results</h4>
+              <h1></h1>
             }
           </div>
         </div>
         <div className="final-plan">
           <div className="h3-container">
             <Link to="/addtrip">
-            <h1>Start Planning HERE!</h1>
-              </Link>
+              <h1>Start Planning HERE!</h1>
+            </Link>
           </div>
         </div>
       </main >
