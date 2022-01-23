@@ -33,12 +33,12 @@ app.use('/api/unsplash', unsplashRouter)
 
 
 
-
-app.get('/*', function (req, res) {
+app.get("/*", function (req, res) {
   res.sendFile(
-    path.dirname(fileURLToPath(import.meta.url), 'build', 'index.html')
+    path.resolve("build/index.html")
   )
 })
+
 
 const port = process.env.PORT || 3001
 
